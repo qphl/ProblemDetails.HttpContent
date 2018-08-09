@@ -1,0 +1,54 @@
+﻿// <copyright file="ProblemDetailsContent.cs" company="Cognisant Research">
+// Copyright (c) Cognisant Research. All rights reserved.
+// </copyright>
+
+namespace CR.ProblemDetails.HttpContent
+{
+    using System.IO;
+    using System.Net;
+    using System.Net.Http.Headers;
+    using System.Threading.Tasks;
+
+    /// <inheritdoc />
+    /// <summary>
+    /// A type of <see cref="HttpContent"/> which can contain <see cref="HttpProblemDetails"/>.
+    /// </summary>
+    public class ProblemDetailsContent : System.Net.Http.HttpContent
+    {
+        private readonly MemoryStream _memoryStream;
+
+#pragma warning disable SA1648 // inheritdoc should be used with inheriting class
+        /// <inheritdoc />
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProblemDetailsContent" /> class for the provided <see cref="HttpProblemDetails" />.
+        /// </summary>
+        /// <param name="problemDetails">The <see cref="HttpProblemDetails" /> to build the <see cref="ProblemDetailsContent" /> from.</param>
+        /// <param name="serializationMethod">The method to write a JSON representation of the provided <see cref="HttpProblemDetails"/> into a <see cref="Stream"/>.</param>
+        public ProblemDetailsContent(HttpProblemDetails problemDetails, SerializeHttpProblemDetailsJsonToStream serializationMethod)
+        {
+            ProblemDetails = problemDetails;
+            _memoryStream = new MemoryStream();
+            serializationMethod(problemDetails, _memoryStream).Wait();
+            Headers.ContentType = MediaTypeHeaderValue.Parse("application/problem+json");
+        }
+#pragma warning restore SA1648 // inheritdoc should be used with inheriting class
+
+        /// <summary>
+        /// Gets the <see cref="HttpProblemDetails"/> this <see cref="HttpContent"/> represents.
+        /// </summary>
+        public HttpProblemDetails ProblemDetails { get; }
+
+        /// <inheritdoc />
+        protected override async Task SerializeToStreamAsync(Stream stream, TransportContext context) => await _memoryStream.CopyToAsync(stream);
+
+        /// <inheritdoc />
+        protected override void Dispose(bool disposing)
+        {
+            _memoryStream.Dispose();
+            base.Dispose(disposing);
+        }
+
+        /// <inheritdoc />
+        protected override bool TryComputeLength(out long length) => (length = _memoryStream?.Length ?? 0) > 0;
+    }
+}
