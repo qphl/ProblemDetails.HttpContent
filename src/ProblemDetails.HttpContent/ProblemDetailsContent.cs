@@ -11,7 +11,7 @@ namespace CR.ProblemDetails.HttpContent
 
     /// <inheritdoc />
     /// <summary>
-    /// A type of <see cref="HttpContent"/> which can contain <see cref="HttpProblemDetails"/>.
+    /// A type of <see cref="HttpContent"/> which can contain <see cref="IHttpProblemDetails"/>.
     /// </summary>
     public class ProblemDetailsContent : System.Net.Http.HttpContent
     {
@@ -20,11 +20,11 @@ namespace CR.ProblemDetails.HttpContent
 #pragma warning disable SA1648 // inheritdoc should be used with inheriting class
         /// <inheritdoc />
         /// <summary>
-        /// Initializes a new instance of the <see cref="ProblemDetailsContent" /> class for the provided <see cref="HttpProblemDetails" />.
+        /// Initializes a new instance of the <see cref="ProblemDetailsContent" /> class for the provided <see cref="IHttpProblemDetails" />.
         /// </summary>
-        /// <param name="problemDetails">The <see cref="HttpProblemDetails" /> to build the <see cref="ProblemDetailsContent" /> from.</param>
-        /// <param name="serializationMethod">The method to write a JSON representation of the provided <see cref="HttpProblemDetails"/> into a <see cref="Stream"/>.</param>
-        public ProblemDetailsContent(HttpProblemDetails problemDetails, SerializeHttpProblemDetailsJsonToStream serializationMethod)
+        /// <param name="problemDetails">The <see cref="IHttpProblemDetails" /> to build the <see cref="ProblemDetailsContent" /> from.</param>
+        /// <param name="serializationMethod">The method to write a JSON representation of the provided <see cref="IHttpProblemDetails"/> into a <see cref="Stream"/>.</param>
+        public ProblemDetailsContent(IHttpProblemDetails problemDetails, SerializeHttpProblemDetailsJsonToStream serializationMethod)
         {
             ProblemDetails = problemDetails;
             _memoryStream = new MemoryStream();
@@ -34,9 +34,9 @@ namespace CR.ProblemDetails.HttpContent
 #pragma warning restore SA1648 // inheritdoc should be used with inheriting class
 
         /// <summary>
-        /// Gets the <see cref="HttpProblemDetails"/> this <see cref="HttpContent"/> represents.
+        /// Gets the <see cref="IHttpProblemDetails"/> this <see cref="HttpContent"/> represents.
         /// </summary>
-        public HttpProblemDetails ProblemDetails { get; }
+        public IHttpProblemDetails ProblemDetails { get; }
 
         /// <inheritdoc />
         protected override async Task SerializeToStreamAsync(Stream stream, TransportContext context) => await _memoryStream.CopyToAsync(stream);

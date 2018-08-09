@@ -8,10 +8,10 @@ namespace CR.ProblemDetails.HttpContent
     using System.Threading.Tasks;
 
     /// <summary>
-    /// A delegate which can be used to change the JSON serialization logic for <see cref="HttpProblemDetails"/> in a <see cref="ProblemDetailsContent"/>.
+    /// A delegate which can be used to change the JSON serialization logic for <see cref="IHttpProblemDetails"/> in a <see cref="ProblemDetailsContent"/>.
     /// </summary>
-    /// <param name="details">The <see cref="HttpProblemDetails"/> to serialize.</param>
-    /// <param name="stream">The <see cref="Stream"/> to write the serialized <see cref="HttpProblemDetails"/> into.</param>
-    /// <returns>A task for the serialization &amp; writing of the <see cref="HttpProblemDetails"/> into the <see cref="Stream"/>.</returns>
-    public delegate Task SerializeHttpProblemDetailsJsonToStream(HttpProblemDetails details, Stream stream);
+    /// <param name="details">The <see cref="IHttpProblemDetails"/> to serialize.</param>
+    /// <param name="stream">The <see cref="Stream"/> to write the serialized <see cref="IHttpProblemDetails"/> into.</param>
+    /// <returns>A task for the serialization &amp; writing of the <see cref="IHttpProblemDetails"/> into the <see cref="Stream"/>.</returns>
+    public delegate Task SerializeHttpProblemDetailsJsonToStream(IHttpProblemDetails details, Stream stream);
 }
