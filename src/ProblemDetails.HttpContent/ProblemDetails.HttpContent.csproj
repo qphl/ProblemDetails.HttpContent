@@ -1,0 +1,49 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard1.1;net45</TargetFrameworks>
+    <AssemblyName>CR.ProblemDetails.HttpContent</AssemblyName>
+    <RootNamespace>CR.ProblemDetails.HttpContent</RootNamespace>
+	<Product>CR.ProblemDetails</Product>
+    <Company>Cognisant Research</Company>
+    <Authors>Cognisant Research</Authors>
+    <Description>The HttpContent package for Http Problem Details according to RFC 7807.</Description>
+    <Copyright>Cognisant Research 2018</Copyright>
+    <PackageLicenseUrl>https://github.com/cognisant/ProblemDetails.HttpContent/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/cognisant/ProblemDetails.HttpContent</PackageProjectUrl>
+    <PackageIconUrl>https://raw.githubusercontent.com/cognisant/ProblemDetails.HttpContent/master/logo.png</PackageIconUrl>
+    <RepositoryUrl>https://github.com/cognisant/ProblemDetails.HttpContent</RepositoryUrl>
+    <PackageTags>Http,Problem,Error,Details,RFC 7807,RFC,7807,Cognisant,Content</PackageTags>
+    <PackageReleaseNotes>https://GitHub.com/Cognisant/ProblemDetails.HttpContent/releases/tag/$(Tag)</PackageReleaseNotes>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>bin\Release\netstandard1.1\CR.ProblemDetails.HttpContent.xml</DocumentationFile>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <WarningsAsErrors />
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>bin\Debug\netstandard1.1\CR.ProblemDetails.HttpContent.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>bin\Release\net45\CR.ProblemDetails.HttpContent.xml</DocumentationFile>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <WarningsAsErrors />
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>bin\Debug\net45\CR.ProblemDetails.HttpContent.xml</DocumentationFile>
+  </PropertyGroup>
+
+
+  <ItemGroup>
+    <PackageReference Include="CR.CodeStyle.CSharp.Full" Version="1.0.2-copyright-update0007">
+      <PrivateAssets>All</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="CR.ProblemDetails" Version="1.0.0-alpha0002" />
+    <PackageReference Include="System.Net.Http" Version="[4.3.0,5.0.0-a)" />
+  </ItemGroup>
+
+</Project>
