@@ -1,11 +1,12 @@
-﻿// <copyright file="SerializeHttpProblemDetailsJsonToStream.cs" company="Cognisant Research">
-// Copyright (c) Cognisant Research. All rights reserved.
+﻿// <copyright file="SerializeHttpProblemDetailsJsonToStream.cs" company="Corsham Science">
+// Copyright (c) Corsham Science. All rights reserved.
 // </copyright>
 
-namespace CR.ProblemDetails.HttpContent
+namespace CorshamScience.ProblemDetails.HttpContent
 {
     using System.IO;
     using System.Threading.Tasks;
+    using CR.ProblemDetails;
 
     /// <summary>
     /// A delegate which can be used to change the JSON serialization logic for <see cref="IHttpProblemDetails"/> in a <see cref="ProblemDetailsContent"/>.
