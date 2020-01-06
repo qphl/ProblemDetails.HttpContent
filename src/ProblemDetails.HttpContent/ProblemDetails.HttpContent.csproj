@@ -2,48 +2,57 @@
 
   <PropertyGroup>
     <TargetFrameworks>netstandard1.1;net45</TargetFrameworks>
-    <AssemblyName>CR.ProblemDetails.HttpContent</AssemblyName>
-    <RootNamespace>CR.ProblemDetails.HttpContent</RootNamespace>
-	<Product>CR.ProblemDetails</Product>
-    <Company>Cognisant Research</Company>
-    <Authors>Cognisant Research</Authors>
+    <AssemblyName>CorshamScience.ProblemDetails.HttpContent</AssemblyName>
+    <RootNamespace>CorshamScience.ProblemDetails.HttpContent</RootNamespace>
+	<Product>CorshamScience.ProblemDetails</Product>
+    <Company>Corsham Science</Company>
+    <Authors>Corsham Science</Authors>
     <Description>The HttpContent package for Http Problem Details according to RFC 7807.</Description>
-    <Copyright>Cognisant Research 2018</Copyright>
-    <PackageLicenseUrl>https://github.com/cognisant/ProblemDetails.HttpContent/blob/master/LICENSE</PackageLicenseUrl>
-    <PackageProjectUrl>https://github.com/cognisant/ProblemDetails.HttpContent</PackageProjectUrl>
-    <PackageIconUrl>https://raw.githubusercontent.com/cognisant/ProblemDetails.HttpContent/master/logo.png</PackageIconUrl>
-    <RepositoryUrl>https://github.com/cognisant/ProblemDetails.HttpContent</RepositoryUrl>
-    <PackageTags>Http,Problem,Error,Details,RFC 7807,RFC,7807,Cognisant,Content</PackageTags>
-    <PackageReleaseNotes>https://GitHub.com/Cognisant/ProblemDetails.HttpContent/releases/tag/$(Tag)</PackageReleaseNotes>
+    <Copyright>Corsham Science 2019</Copyright>
+    <PackageProjectUrl>https://github.com/qphl/ProblemDetails.HttpContent</PackageProjectUrl>
+    <PackageIconUrl>https://raw.githubusercontent.com/qphl/ProblemDetails.HttpContent/master/logo.png</PackageIconUrl>
+    <RepositoryUrl>https://github.com/qphl/ProblemDetails.HttpContent</RepositoryUrl>
+    <PackageTags>Http,Problem,Error,Details,RFC 7807,RFC,7807,Corsham Science,Content</PackageTags>
+    <PackageReleaseNotes>https://GitHub.com/qphl/ProblemDetails.HttpContent/releases/tag/$(Tag)</PackageReleaseNotes>
+    <PackageLicenseExpression>BSD-3-Clause</PackageLicenseExpression>
+    <PackageIcon>Logo.png</PackageIcon>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>bin\Release\netstandard1.1\CR.ProblemDetails.HttpContent.xml</DocumentationFile>
+    <DocumentationFile>bin\Release\netstandard1.1\CorshamScience.ProblemDetails.HttpContent.xml</DocumentationFile>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <WarningsAsErrors />
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>bin\Debug\netstandard1.1\CR.ProblemDetails.HttpContent.xml</DocumentationFile>
+    <DocumentationFile>bin\Debug\netstandard1.1\CorshamScience.ProblemDetails.HttpContent.xml</DocumentationFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>bin\Release\net45\CR.ProblemDetails.HttpContent.xml</DocumentationFile>
+    <DocumentationFile>bin\Release\net45\CorshamScience.ProblemDetails.HttpContent.xml</DocumentationFile>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <WarningsAsErrors />
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>bin\Debug\net45\CR.ProblemDetails.HttpContent.xml</DocumentationFile>
+    <DocumentationFile>bin\Debug\net45\CorshamScience.ProblemDetails.HttpContent.xml</DocumentationFile>
   </PropertyGroup>
 
 
   <ItemGroup>
-    <PackageReference Include="CR.CodeStyle.CSharp.Full" Version="1.0.2-copyright-update0007">
-      <PrivateAssets>All</PrivateAssets>
+    <PackageReference Include="CorshamScience.CodeStyle.CSharp.Full" Version="3.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="CR.ProblemDetails" Version="1.0.0-alpha0002" />
-    <PackageReference Include="System.Net.Http" Version="[4.3.0,5.0.0-a)" />
+    <PackageReference Include="CR.ProblemDetails" Version="1.0.0" />
+    <PackageReference Include="System.Net.Http" Version="4.3.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Logo.png">
+      <PackagePath></PackagePath>
+      <Pack>True</Pack>
+    </None>
   </ItemGroup>
 
 </Project>

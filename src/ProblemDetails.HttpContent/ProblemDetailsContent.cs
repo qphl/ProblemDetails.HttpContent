@@ -1,13 +1,15 @@
-﻿// <copyright file="ProblemDetailsContent.cs" company="Cognisant Research">
-// Copyright (c) Cognisant Research. All rights reserved.
+﻿// <copyright file="ProblemDetailsContent.cs" company="Corsham Science">
+// Copyright (c) Corsham Science. All rights reserved.
 // </copyright>
 
-namespace CR.ProblemDetails.HttpContent
+namespace CorshamScience.ProblemDetails.HttpContent
 {
     using System.IO;
     using System.Net;
+    using System.Net.Http;
     using System.Net.Http.Headers;
     using System.Threading.Tasks;
+    using CR.ProblemDetails;
 
     /// <inheritdoc />
     /// <summary>

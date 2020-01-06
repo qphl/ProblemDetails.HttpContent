@@ -1,3 +1,3 @@
-# CR.ProblemDetails.HttpContent
+# CorshamScience.ProblemDetails.HttpContent
 
-A package containing a `HttpContent` implementation for `HttpProblemDetails` from [CR.ProblemDetails](https://github.com/Cognisant/ProblemDetails).
+A package containing a `HttpContent` implementation for `HttpProblemDetails` from [CorshamScience.ProblemDetails](https://github.com/qphl/ProblemDetails).
