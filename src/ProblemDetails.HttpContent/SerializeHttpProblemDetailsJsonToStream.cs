@@ -6,7 +6,7 @@ namespace CorshamScience.ProblemDetails.HttpContent
 {
     using System.IO;
     using System.Threading.Tasks;
-    using CR.ProblemDetails;
+    using CorshamScience.ProblemDetails;
 
     /// <summary>
     /// A delegate which can be used to change the JSON serialization logic for <see cref="IHttpProblemDetails"/> in a <see cref="ProblemDetailsContent"/>.

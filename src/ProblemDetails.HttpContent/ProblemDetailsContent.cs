@@ -9,7 +9,7 @@ namespace CorshamScience.ProblemDetails.HttpContent
     using System.Net.Http;
     using System.Net.Http.Headers;
     using System.Threading.Tasks;
-    using CR.ProblemDetails;
+    using CorshamScience.ProblemDetails;
 
     /// <inheritdoc />
     /// <summary>
